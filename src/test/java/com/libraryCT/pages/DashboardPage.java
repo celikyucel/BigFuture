@@ -20,5 +20,7 @@ public class DashboardPage {
     @FindBy(xpath = "//*[@id=\"menu_item\"]/li[3]/a")
     public WebElement BooksLink;
 
+    @FindBy(css = ".nav-link.dropdown-toggle")
+    public WebElement UserNameLink;
 
 }
