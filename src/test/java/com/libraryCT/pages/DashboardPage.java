@@ -26,4 +26,7 @@ public class DashboardPage {
     @FindBy(css = ".dropdown-item")
     public WebElement LogOut;
 
+    @FindBy(css = "#borrowed_books")
+    public WebElement BorrowedBooks;
+
 }
