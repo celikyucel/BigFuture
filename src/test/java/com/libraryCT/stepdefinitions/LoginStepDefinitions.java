@@ -1,4 +1,4 @@
-package com.libraryCT.StepDefinitions;
+package com.libraryCT.stepdefinitions;
 
 public class LoginStepDefinitions {
 }
