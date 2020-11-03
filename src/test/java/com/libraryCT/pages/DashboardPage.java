@@ -23,4 +23,7 @@ public class DashboardPage {
     @FindBy(css = ".nav-link.dropdown-toggle")
     public WebElement UserNameLink;
 
+    @FindBy(css = ".dropdown-item")
+    public WebElement LogOut;
+
 }
