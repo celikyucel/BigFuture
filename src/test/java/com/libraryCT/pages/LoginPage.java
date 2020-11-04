@@ -20,15 +20,12 @@ public class LoginPage {
     public WebElement submitButton;
 
 
+    public void login(String userNameStr, String passwordStr) {
+        emailInput.sendKeys(userNameStr);
+        passwordInput.sendKeys(passwordStr);
+        submitButton.click();
 
-
-
-
-
-
-
-
-
+    }
 
 
 

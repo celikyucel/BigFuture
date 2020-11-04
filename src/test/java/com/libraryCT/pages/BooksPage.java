@@ -20,7 +20,7 @@ public class BooksPage {
     @FindBy(css = "input[type='search']")
     public WebElement searchBox;
 
-    @FindBy(xpath = "//table/thead/tr/th")
+    @FindBy(xpath = "//th")
     public List<WebElement> tableColumnNames;
 
     @FindBy(xpath = "//span[text()='Books']")
