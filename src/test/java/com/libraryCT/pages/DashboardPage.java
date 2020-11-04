@@ -10,6 +10,8 @@ import java.util.List;
 
 public class DashboardPage {
 
+    public DashboardPage(){ PageFactory.initElements(Driver.get(), this); }
+
 
     @FindBy(css = ".navbar-brand")
     public WebElement LibraryLink;
@@ -23,7 +25,10 @@ public class DashboardPage {
     @FindBy(css = ".nav-link.dropdown-toggle")
     public WebElement UserNameLink;
 
-    @FindBy(css = ".dropdown-item")
+    @FindBy(id = "user_avatar")
+    public WebElement User_Avatar;
+
+    @FindBy(linkText = "Log Out")
     public WebElement LogOut;
 
     @FindBy(css = "#borrowed_books")
