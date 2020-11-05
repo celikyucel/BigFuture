@@ -6,7 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 public class DashboardPage {
+
     public DashboardPage(){ PageFactory.initElements(Driver.get(), this); }
+
     @FindBy(css = ".navbar-brand")
     public WebElement LibraryLink;
     @FindBy(xpath = "//*[@class=\"nav-item\"][2]")
