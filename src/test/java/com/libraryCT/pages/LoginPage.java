@@ -17,6 +17,8 @@ public class LoginPage {
     @FindBy(xpath = "//*[@type='submit']")
     public WebElement submitButton;
 
+    @FindBy (css = ".alert.alert-danger")
+    public WebElement Errormsg;
 
     public void login(String userNameStr, String passwordStr) {
         emailInput.sendKeys(userNameStr);
