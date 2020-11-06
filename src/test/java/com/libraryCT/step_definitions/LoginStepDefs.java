@@ -8,6 +8,7 @@ import com.libraryCT.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class LoginStepDefs {
 
@@ -21,26 +22,35 @@ public class LoginStepDefs {
 
     }
 
-    @When("{string} enters {string} and {string}")
-    public void enters_and(String role, String email, String password) {
-
+   @When("user enters {string} and {string}")
+    public void user_enters_and(String email, String password) {
         LoginPage loginPage= new LoginPage();
 
         loginPage.emailInput.sendKeys(email);
         loginPage.passwordInput.sendKeys(password);
-
 
         loginPage.submitButton.click();
 
         BrowserUtils.waitFor(3);
     }
 
-    @Then("user on  {string}")
-    public void user_on(String string) {
+    @Then("{string} on  {string}")
+    public void on(String role, String page) {
 
-    String actualTitle= new DashboardPage().book_Management_Title.getText();
+        if (role.contains("student")){
 
-        System.out.println("actualTitle = " + actualTitle);
+        String actualTitle= new DashboardPage().book_Management_Title.getText();
+
+            Assert.assertTrue(actualTitle.contains(page));
+
+        } else {
+
+             String dashboardLogoText=new DashboardPage().dashboard_button.getText();
+
+            Assert.assertTrue(dashboardLogoText.contains(page));
+
+        }
+
 
     }
 
