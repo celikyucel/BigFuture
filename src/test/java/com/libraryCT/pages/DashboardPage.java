@@ -23,4 +23,10 @@ public class DashboardPage {
     public WebElement LogOut;
     @FindBy(css = "#borrowed_books")
     public WebElement BorrowedBooks;
+
+    @FindBy(xpath = "//*[@id=\"books\"]/div[1]/div[1]/h3")
+    public WebElement book_Management_Title;
+
+    @FindBy(xpath = "//*[@id=\"menu_item\"]/li/a/span")
+    public WebElement dashboard_button;
 }
