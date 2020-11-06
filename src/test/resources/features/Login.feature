@@ -1,6 +1,6 @@
 Feature: Login functuonility
 
-@wip
+@kiss
 Scenario Outline: login as a user
 Given the user navigates to login page
 When "<role>" enters "<email>" and "<password>"
