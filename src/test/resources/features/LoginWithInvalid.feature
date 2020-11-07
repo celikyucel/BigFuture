@@ -5,8 +5,8 @@ Feature: Login with invalid
      When user login with "<username>" and "<password>"
     Then  user should not be able to login
     Examples:
-      |username         |password    |
-      |ertfd@library    |ef45gtt76   |
-      |ws3234@library   |e3455gtt76  |
-      |                 |             |
+      | username         | password    |
+      | ertfd@library    | ef45gtt76   |
+      | ws3234@library   | e3455gtt76  |
+
 
