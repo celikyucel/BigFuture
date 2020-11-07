@@ -1,4 +1,4 @@
-Feature: Login functuonility
+Feature: Login functionality
 
   @kiss
   Scenario Outline: login as a user
