@@ -1,6 +1,7 @@
 Feature: Login with invalid
 
-  @wip
+
+
   Scenario Outline:
      When user login with "<username>" and "<password>"
     Then  user should not be able to login

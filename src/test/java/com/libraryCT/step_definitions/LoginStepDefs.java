@@ -54,6 +54,25 @@ public class LoginStepDefs {
 
     }
 
+    @Then("logged in as a {string}")
+    public void logged_in_as_a(String userType) {
+
+        if(userType.equalsIgnoreCase("librarian")) {
+            String username = ConfigurationReader.get("librarian_username");
+            String password = ConfigurationReader.get("librarian_password");
+
+            LoginPage loginPage = new LoginPage();
+            loginPage.login(username, password);
+        }else if (userType.equalsIgnoreCase("student")){
+
+            String username = ConfigurationReader.get("student_username");
+            String password = ConfigurationReader.get("student_password");
+
+            LoginPage loginPage = new LoginPage();
+            loginPage.login(username, password);
+        }
+    }
+
 
 
 
