@@ -8,9 +8,8 @@ public class LogoutDefs {
 
     @Then("user should be able to logout")
     public void user_should_be_able_to_logout() {
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.User_Avatar.click();
-        dashboardPage.LogOut.click();
+        
+        new DashboardPage().logOut();
 
         String expectedUrl = ConfigurationReader.get("url");
         Assert.assertEquals(expectedUrl,Driver.get().getCurrentUrl());
