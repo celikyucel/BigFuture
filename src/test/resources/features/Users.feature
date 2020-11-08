@@ -18,6 +18,5 @@ Feature: librarian should be able to add users from users page
 		    Then the add user page closes "<popup>"
 		
 		    Examples:
-		
 		    |user|  
 		        
