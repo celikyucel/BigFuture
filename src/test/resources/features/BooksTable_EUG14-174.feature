@@ -1,6 +1,4 @@
-Feature:Students default page
-
-	#As a student, I should be able to see tables with default info
+Feature: As a student, I should be able to see tables with default info
   @EUG14-174
   Scenario: Students see tables with default info
     When the user navigates to login page
