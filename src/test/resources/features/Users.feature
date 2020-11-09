@@ -6,17 +6,12 @@ Feature: librarian should be able to add users from users page
 	#3. Librarians able to edit user info.
 
 	@EUG14-172 @EUG14-170
-	Scenario Outline: As a librarian, I should be able to add users from users page. 
-		Feature: Login
-		Scenario Outline: Login as a librarian
-		    Given the user logged in as "<librarian>"
-		    When the user click to "<button>" "<add user>"
-		    Then the page creates "<user>"
-		    When user click to "<button>" "<close>"
-		    Then the add user page closes "<popup>"
-		    When user click to "<button>" "<edit>"
-		    Then the add user page closes "<popup>"
-		
-		    Examples:
-		    |user|  
+	Scenario: As a librarian, I should be able to add users from users page
+		    Given the user logged in as "librarian"
+		    When the user click to "button" "add user"
+		    Then the page creates "user"
+		    When user click to "button" "close"
+		    Then the add user page closes "popup"
+		    When user click to "button" "edit"
+		    Then the add user page closes "popup"
 		        
