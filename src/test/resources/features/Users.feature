@@ -14,5 +14,4 @@ Feature: librarian should be able to add users from users page
 		    Then the add user page closes "popup"
 		    When user click to "button" "edit"
 		    Then the add user page closes "popup"
-
 		        

@@ -61,7 +61,7 @@ public abstract class  BasePage {
 
 
     public void logOut(){
-        BrowserUtils.waitFor(10);
+        BrowserUtils.waitFor(3);
         BrowserUtils.clickWithJS(userName);
         BrowserUtils.clickWithJS(logOutLink);
     }
