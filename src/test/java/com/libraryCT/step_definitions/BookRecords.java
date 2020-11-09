@@ -18,20 +18,6 @@ import java.util.List;
 public class BookRecords {
 
 
-    @Given("the user is logged in2")
-    public void the_user_is_logged_in2() {
-
-        String url = ConfigurationReader.get("url");
-        //WebDriver driver = Driver.get();
-        Driver.get().get(url);
-
-        String username = ConfigurationReader.get("librarian_username");
-        String password = ConfigurationReader.get("librarian_password");
-
-        LoginPage loginPage = new LoginPage();
-        loginPage.login(username, password);
-    }
-
     @Given("Navigate to Book Record Page")
     public void navigate_to_Book_Record_Page() {
         BrowserUtils.waitForClickablility(new BooksPage().booksTabButton, 5);
