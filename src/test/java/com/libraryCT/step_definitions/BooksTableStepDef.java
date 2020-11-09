@@ -29,7 +29,8 @@ public class BooksTableStepDef {
 
         LoginPage loginPage = new LoginPage();
         loginPage.login(username,password);
-        }
+
+    }
 
 
     @Then("table should have following column names")
