@@ -14,6 +14,11 @@ Feature: Login functionality
       | librarian52@library | QKjmEIhB | librarian52 | Dashboard       |
 
 
+  @wip
+  Scenario: login as a user
+    Given the user navigates to login page
+    Then  logged in as a "student"
+
 
 
 

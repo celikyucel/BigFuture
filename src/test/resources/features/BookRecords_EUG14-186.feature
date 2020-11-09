@@ -1,10 +1,13 @@
 Feature:Librarian should be able to see book records on the user page
 
+  Background:
+    Given the user navigates to login page
+    Then  logged in as a "librarian"
+
   @EUG14-186
-  @wip
   Scenario: Librarian should be able to see default book records
 
-    Given the user is logged in2
+    And Navigate to Book Record Page
     Then Verify default record is 10
     And Verify book records is following options
       | 5   |

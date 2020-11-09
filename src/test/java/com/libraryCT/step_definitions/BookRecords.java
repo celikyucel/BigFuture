@@ -2,11 +2,13 @@ package com.libraryCT.step_definitions;
 
 import com.libraryCT.pages.BooksPage;
 import com.libraryCT.pages.LoginPage;
+import com.libraryCT.utilities.BrowserUtils;
 import com.libraryCT.utilities.ConfigurationReader;
 import com.libraryCT.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -27,18 +29,33 @@ public class BookRecords {
         String password = ConfigurationReader.get("librarian_password");
 
         LoginPage loginPage = new LoginPage();
-        loginPage.login(username,password);
+        loginPage.login(username, password);
     }
+
+    @Given("Navigate to Book Record Page")
+    public void navigate_to_Book_Record_Page() {
+        BrowserUtils.waitForClickablility(new BooksPage().booksTabButton, 5);
+
+        new BooksPage().booksTabButton.click();
+
+        BrowserUtils.waitForVisibility(Driver.get().findElement(By.xpath("//*[@id='books']//div//h3")), 5);
+
+        String actualTitle = Driver.get().findElement(By.xpath("//*[@id='books']//div//h3")).getText();
+
+        String expectedTitle = "Book Management";
+
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+    }
+
 
     @Then("Verify default record is {int}")
     public void verify_default_record_is(Integer expectedRecord) {
-        new BooksPage().booksTabButton.click();
 
 
         Select select = new Select(new BooksPage().showRecordsDropdown);
 
         String defaultRecords = select.getFirstSelectedOption().getText();
-        System.out.println("defaultRecords = " + defaultRecords);
 
         Integer actualDefault = Integer.parseInt(defaultRecords);
 
@@ -53,15 +70,14 @@ public class BookRecords {
 
         List<WebElement> recordOptions = select.getOptions();
 
-        List<String> actualRecords= new ArrayList<>();
+        List<String> actualRecords = new ArrayList<>();
 
         for (WebElement recordOption : recordOptions) {
             actualRecords.add(recordOption.getText());
         }
-        System.out.println(actualRecords.toString());
 
-        Assert.assertEquals(expectedOptions,actualRecords);
 
+        Assert.assertEquals(expectedOptions, actualRecords);
 
 
     }
