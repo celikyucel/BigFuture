@@ -6,9 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BorrowingBookspage {
-
-    public BorrowingBookspage(){ PageFactory.initElements(Driver.get(),this); }
+public class BorrowingBookspage extends BasePage {
 
     @FindBy (css = "a[href='#books']")
     public WebElement booksOption;
