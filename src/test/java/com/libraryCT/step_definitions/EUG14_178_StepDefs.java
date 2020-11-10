@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class EUG14_187_StepDefs {
+public class EUG14_178_StepDefs {
     @Then("user see <module>")
     public void userSeeModule(List<String> expectedModules) {
 
