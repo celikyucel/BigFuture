@@ -8,7 +8,7 @@ Feature: librarian should be able to add users from users page
 	@EUG14-172 @EUG14-170
 	Scenario: As a librarian, I should be able to add users from users page
 		    Given the user logged in as "librarian"
-		    When the user click to "button" "add user"
+		    When the user click to "button" "add_user"
 		    Then the page creates "user"
 		    When user click to "button" "close"
 		    Then the add user page closes "popup"
