@@ -22,7 +22,7 @@ public class UserStepDefs {
         LoginPage loginPage = new LoginPage();
         loginPage.login(username,password);
     }
-    }
+
 
     @When("the librarian clicks to addUser button")
     public void the_librarian_clicks_to_addUser_button() {

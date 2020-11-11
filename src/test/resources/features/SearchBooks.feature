@@ -10,7 +10,6 @@ Feature:
     Then the user should search books on following "<categories>"
     Examples:
       | categories              |
-      | ALL                     |
       | Action and Adventure    |
       | Anthology               |
       | Classic                 |

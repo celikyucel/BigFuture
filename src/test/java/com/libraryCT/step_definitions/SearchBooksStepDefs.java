@@ -25,16 +25,16 @@ public class SearchBooksStepDefs {
     }
 
     @Then("the user should search books on following {string}")
-    public void the_user_should_search_books_on_following(String categoryType) {
+    public void the_user_should_search_books_on_following(String categoryType) throws InterruptedException {
         BooksPage booksPage = new BooksPage();
+
         Select select = new Select(booksPage.bookCategoriesDropdown);
+        BrowserUtils.waitFor(2);
         select.selectByVisibleText(categoryType);
-
+        BrowserUtils.waitFor(2);
         String actualResult = Driver.get().findElement(By.xpath("//tbody/tr[1]/td[5]")).getText();
+        Assert.assertEquals(categoryType, actualResult);
 
-        if (categoryType != "ALL"){
-            Assert.assertEquals(categoryType, actualResult);
-        }
 
 
 
