@@ -24,6 +24,8 @@ public class BooksPage extends BasePage{
     @FindBy(xpath = "//span[text()='Books']")
     public WebElement booksTabButton;
 
+    @FindBy (xpath = "//*[@id='books']//div//h3")
+    public WebElement BookPageTitle;
 
 
 }

@@ -14,11 +14,10 @@ public class SearchBooksStepDefs {
 
     @Then("the user navigates to book page")
     public void the_user_navigates_to_book_page() {
-        DashboardPage dashboardPage = new DashboardPage();
-        dashboardPage.BooksLink.click();
-        BrowserUtils.waitForVisibility(Driver.get().findElement(By.xpath("//*[@id='books']//div//h3")), 5);
+        BooksPage booksPage = new BooksPage();
 
-        String actualTitle = Driver.get().findElement(By.xpath("//*[@id='books']//div//h3")).getText();
+        BrowserUtils.waitForVisibility(booksPage.BookPageTitle, 5);
+        String actualTitle = booksPage.BookPageTitle.getText();
 
         String expectedTitle = "Book Management";
 
@@ -32,6 +31,7 @@ public class SearchBooksStepDefs {
         select.selectByVisibleText(categoryType);
 
         String actualResult = Driver.get().findElement(By.xpath("//tbody/tr[1]/td[5]")).getText();
+
         if (categoryType != "ALL"){
             Assert.assertEquals(categoryType, actualResult);
         }
