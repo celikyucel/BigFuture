@@ -1,8 +1,14 @@
 package com.libraryCT.step_definitions;
 
 import com.libraryCT.pages.BooksPage;
+import com.libraryCT.pages.LoginPage;
+import com.libraryCT.utilities.BrowserUtils;
+import com.libraryCT.utilities.ConfigurationReader;
+import com.libraryCT.utilities.Driver;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -11,7 +17,24 @@ import java.util.List;
 
 public class BookRecords {
 
-    
+
+    @Given("Navigate to Book Record Page")
+    public void navigate_to_Book_Record_Page() {
+        BrowserUtils.waitForClickablility(new BooksPage().booksTabButton, 5);
+
+        new BooksPage().booksTabButton.click();
+
+        BrowserUtils.waitForVisibility(Driver.get().findElement(By.xpath("//*[@id='books']//div//h3")), 5);
+
+        String actualTitle = Driver.get().findElement(By.xpath("//*[@id='books']//div//h3")).getText();
+
+        String expectedTitle = "Book Management";
+
+        Assert.assertEquals(expectedTitle, actualTitle);
+
+    }
+
+
     @Then("Verify default record is {int}")
     public void verify_default_record_is(Integer expectedRecord) {
 
@@ -33,14 +56,14 @@ public class BookRecords {
 
         List<WebElement> recordOptions = select.getOptions();
 
-        List<String> actualRecords= new ArrayList<>();
+        List<String> actualRecords = new ArrayList<>();
 
         for (WebElement recordOption : recordOptions) {
             actualRecords.add(recordOption.getText());
         }
 
-        Assert.assertEquals(expectedOptions,actualRecords);
 
+        Assert.assertEquals(expectedOptions, actualRecords);
 
 
     }

@@ -1,4 +1,4 @@
-Feature: Login functuonility
+Feature: Login functionality
 
   @kiss
   Scenario Outline: login as a user
@@ -7,11 +7,18 @@ Feature: Login functuonility
     Then "<role>" on  "<page>"
 
     Examples:
-      | email            | password |role      |page|
-      |student62@library |KbybTpIZ |student62|Book Management|
-      |student63@library|Jg2orVoF  |student63|Book Management|
-      |student64@library|pbdQAvkN  |student64|Book Management|
-      |librarian52@library|QKjmEIhB|librarian52|Dashboard|
+      | email               | password | role        | page            |
+      | student62@library   | KbybTpIZ | student62   | Book Management |
+      | student63@library   | Jg2orVoF | student63   | Book Management |
+      | student64@library   | pbdQAvkN | student64   | Book Management |
+      | librarian52@library | QKjmEIhB | librarian52 | Dashboard       |
+
+
+  @wip
+  Scenario: login as a user
+    Given the user navigates to login page
+    Then  logged in as a "student"
+
 
 
 

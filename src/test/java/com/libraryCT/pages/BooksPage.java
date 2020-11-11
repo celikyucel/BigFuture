@@ -7,9 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class BooksPage {
-
-    public BooksPage(){ PageFactory.initElements(Driver.get(), this); }
+public class BooksPage extends BasePage{
 
     @FindBy(css = "#book_categories")
     public WebElement bookCategoriesDropdown;
